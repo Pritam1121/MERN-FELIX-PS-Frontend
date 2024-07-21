@@ -8,7 +8,7 @@ function App1() {
   const [data, setdata] = useState([]);
 
   const getData =async()=>{
-    const mainData= await axios.get('https://jsonplaceholder.typicode.com/users')
+    const mainData= await axios.get(import.meta.env.VITE_LINK2)
     setdata(mainData.data)
   }
 

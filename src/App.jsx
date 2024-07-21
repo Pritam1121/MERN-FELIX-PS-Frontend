@@ -1,14 +1,14 @@
 import { useEffect, useState } from 'react'
 import './App.css'
 import axios from 'axios'
-
-
+// import dotenv from 'dotenv'
 
 function App() {
   const [data, setdata] = useState([]);
-
+  
   const getData =async()=>{
-    const mainData= await axios.get('https://mern-felix-ps-backend.onrender.com/movies')
+    const mainData= await axios.get(import.meta.env.VITE_LINK1);
+    console.log(mainData.data)
     setdata(mainData.data)
   }
 
@@ -48,3 +48,17 @@ function App() {
 }
 
 export default App
+
+
+// Git CMD Command
+// echo "# MERN-FELIX-PS-Frontend" >> README.md
+// git init
+// git add README.md
+// git commit -m "first commit"
+// git branch -M main
+// git remote add origin https://github.com/Pritam1121/MERN-FELIX-PS-Frontend.git
+// git push -u origin main
+// …or push an existing repository from the command line
+// git remote add origin https://github.com/Pritam1121/MERN-FELIX-PS-Frontend.git
+// git branch -M main
+// git push -u origin main
